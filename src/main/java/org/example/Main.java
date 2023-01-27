@@ -1,10 +1,11 @@
 package org.example;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 class Main {
     public static void main(String[] args) {
-
+        Logger l=Logger.getLogger("com.api.jar");
         Scanner sc = new Scanner(System.in);
         double radius;
         double length;
@@ -16,37 +17,37 @@ class Main {
 
         Shape s1 = null;
 
-        System.out.println("Enter the type of shape");
+        l.info("Enter the type of shape");
         String type = sc.next();
 
         if (type.equals("circle")) {
-            System.out.println("Enter the radius\n");
+            l.info("Enter the radius\n");
             radius = sc.nextDouble();
             s1 = new Shape(type, radius);
         } else if (type.equals("rectangle")) {
-            System.out.println("Enter the length\n");
+            l.info("Enter the length\n");
             length = sc.nextInt();
-            System.out.println("Enter the width\n");
+            l.info("Enter the width\n");
             width = sc.nextDouble();
             s1 = new Shape(type, length, width);
         } else if (type.equals("triangle")) {
-            System.out.println("Enter the length of a\n");
+            l.info("Enter the length of a\n");
             a = sc.nextDouble();
-            System.out.println("Enter the length of b\n");
+            l.info("Enter the length of b\n");
             b = sc.nextDouble();
-            System.out.println("Enter the base\n");
+            l.info("Enter the base\n");
             base = sc.nextDouble();
-            System.out.println("Enter the height\n");
+            l.info("Enter the height\n");
             height = sc.nextDouble();
             s1 = new Shape(type, a, b, base, height);
         } else {
-            System.out.println("Enter the correct shape");
+            l.info("Enter the correct shape");
         }
 
-        System.out.println("Area is " + s1.getArea());
-        System.out.println("Perimeter is" + s1.getPerimeter());
+        l.info("Area is " + s1.getArea());
+        l.info("Perimeter is" + s1.getPerimeter());
     }
-        
+
 }
 
 
