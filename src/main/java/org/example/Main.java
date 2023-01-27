@@ -14,23 +14,26 @@ class Main {
         double height;
         double a;
         double b;
+        String s="circle";
+        String s2="rectangle";
+        String s3="triangle";
 
         Shape s1 = null;
 
         l.info("Enter the type of shape");
         String type = sc.next();
 
-        if (type.equals("circle")) {
+        if (type.equals(s)) {
             l.info("Enter the radius\n");
             radius = sc.nextDouble();
             s1 = new Shape(type, radius);
-        } else if (type.equals("rectangle")) {
+        } else if (type.equals(s2)) {
             l.info("Enter the length\n");
             length = sc.nextInt();
             l.info("Enter the width\n");
             width = sc.nextDouble();
             s1 = new Shape(type, length, width);
-        } else if (type.equals("triangle")) {
+        } else if (type.equals(s3)) {
             l.info("Enter the length of a\n");
             a = sc.nextDouble();
             l.info("Enter the length of b\n");
@@ -60,6 +63,9 @@ class Shape extends Main {
     private double a;
     private double b;
     private double radius;
+    String s="circle";
+    String s2="rectangle";
+    String s3="triangle";
 
     Shape(String type, double radius) {
         this.type = type;
@@ -82,11 +88,11 @@ class Shape extends Main {
 
     public double getPerimeter() {
         double perimeter = 0;
-        if (type.equals("triangle")) {
+        if (type.equals(s3)) {
             perimeter = a + b + base;
-        } else if (type.equals("rectangle")) {
+        } else if (type.equals(s2)) {
             perimeter = 2 * (length + width);
-        } else if (type.equals("circle")) {
+        } else if (type.equals(s)) {
             perimeter = 2 * Math.PI * radius;
         }
         return perimeter;
@@ -94,11 +100,11 @@ class Shape extends Main {
 
     public double getArea() {
         double area = 0;
-        if (type.equals("triangle")) {
+        if (type.equals(s3)) {
             area = base * height * 0.5;
-        } else if (type.equals("rectangle")) {
+        } else if (type.equals(s2)) {
             area = length * width;
-        } else if (type.equals("circle")) {
+        } else if (type.equals(s)) {
             area = Math.PI * radius * radius;
         }
         return area;
