@@ -20,7 +20,7 @@ class Main {
 
         Shape s1 = null;
 
-        l.info("Enter the type of shape");
+        l.info("Enter the type of shape\n1.circle\n2.rectangle\n3.triangle");
         String type = sc.next();
 
         if (type.equals(s)) {
