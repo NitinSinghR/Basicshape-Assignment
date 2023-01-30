@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class Main {
@@ -47,7 +48,7 @@ class Main {
                 l.info("Enter the correct shape");
             }
         }catch(InputMismatchException e){
-            e.printStackTrace();
+            l.log(Level.INFO,()->" "+e);
         }
         l.info("Area is " + s1.getArea());
         l.info("Perimeter is" + s1.getPerimeter());
