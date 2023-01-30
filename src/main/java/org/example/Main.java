@@ -22,31 +22,33 @@ class Main {
 
         l.info("Enter the type of shape\n1.circle\n2.rectangle\n3.triangle");
         String type = sc.next();
-
-        if (type.equals(s)) {
-            l.info("Enter the radius\n");
-            radius = sc.nextDouble();
-            s1 = new Shape(type, radius);
-        } else if (type.equals(s2)) {
-            l.info("Enter the length\n");
-            length = sc.nextInt();
-            l.info("Enter the width\n");
-            width = sc.nextDouble();
-            s1 = new Shape(type, length, width);
-        } else if (type.equals(s3)) {
-            l.info("Enter the length of a\n");
-            a = sc.nextDouble();
-            l.info("Enter the length of b\n");
-            b = sc.nextDouble();
-            l.info("Enter the base\n");
-            base = sc.nextDouble();
-            l.info("Enter the height\n");
-            height = sc.nextDouble();
-            s1 = new Shape(type, a, b, base, height);
-        } else {
-            l.info("Enter the correct shape");
+        try {
+            if (type.equals(s)) {
+                l.info("Enter the radius\n");
+                radius = sc.nextDouble();
+                s1 = new Shape(type, radius);
+            } else if (type.equals(s2)) {
+                l.info("Enter the length\n");
+                length = sc.nextInt();
+                l.info("Enter the width\n");
+                width = sc.nextDouble();
+                s1 = new Shape(type, length, width);
+            } else if (type.equals(s3)) {
+                l.info("Enter the length of a\n");
+                a = sc.nextDouble();
+                l.info("Enter the length of b\n");
+                b = sc.nextDouble();
+                l.info("Enter the base\n");
+                base = sc.nextDouble();
+                l.info("Enter the height\n");
+                height = sc.nextDouble();
+                s1 = new Shape(type, a, b, base, height);
+            } else {
+                l.info("Enter the correct shape");
+            }
+        }catch(InputMismatchException e){
+            e.printStackTrace();
         }
-
         l.info("Area is " + s1.getArea());
         l.info("Perimeter is" + s1.getPerimeter());
     }
