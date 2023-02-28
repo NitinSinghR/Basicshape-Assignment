@@ -1,6 +1,6 @@
 package org.example;
 
-class Shape extends Main {
+class Shape extends BasicShape {
     private final String type;
     private double length;
     private double base;
